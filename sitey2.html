@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>We testing this</title>
+        <link rel="stylesheet" href="ceeeses.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+        src="https://apis.mappls.com/advancedmaps/api/a8f400f8742c93b5417c05f5b6b2c897/map_sdk?layer=vector&v=3.0&callback=initMap1"
+        defer
+        async
+      ></script>
+    </head>
+    <body>
+        <div id="LiterallyEverything">
+            <div id="TopGreen">
+                <div>
+                    <img src="Recyclee.png" alt="Icon" id="Icony">
+                </div>
+                <table id="Top_Info">
+                    <tr>
+                        <td>Why Segregate</td>
+                        <td>Types of E-Waste</td>
+                        <td>About us</td>
+                    </tr>
+                </table>z
+            </div>
+            <div id="Mainstuff">
+                <table id="SandMap">
+                    <tr style="height: 50%;">
+                        <td style="width: 30%;">
+                            <input type="text" placeholder="Enter your location" id="Searcher">
+                        </td>
+                        <td style="width: 10%;">
+                            <button id="SearchButton">Search</button>
+                        </td>
+                        <td style="width: 60%;">
+                            <div id = "MappyMain"></div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="gyan">
+                    <tr style="position: relative; width: 100%;">
+                        <td style="position: relative; width: 50%;">
+                          <table style="position: relative; width: 100%; height: 100%;">
+                            <tr style="position: relative; width: 100%; height: 100%;">
+                              <td class="gyanHeading">Why recycle</td>
+                            </tr>
+                            <tr style="position: relative; width: 100%; height: 100%;">
+                              <td class="gyanDetail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque repudiandae voluptas quidem quo quisquam et maxime accusantium, nihil reprehenderit autem, ipsum perspiciatis inventore consequuntur voluptate quae nostrum? Eum nam quaerat placeat aperiam.</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td> <img src="pic1.jpg" alt="1" style="position: relative; width: 100%; margin-left: 30%; border: 1px black solid;"></td>
+                    </tr>
+                    <tr style="position: relative; width: 100%;">
+                      <td style="position: relative; width: 50%;">
+                        <table style="position: relative; width: 100%; height: 100%;">
+                          <tr style="position: relative; width: 100%; height: 100%;">
+                            <td class="gyanHeading">Types of E-Waste</td>
+                          </tr>
+                          <tr style="position: relative; width: 100%; height: 100%;">
+                            <td class="gyanDetail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque repudiandae voluptas quidem quo quisquam et maxime accusantium, nihil reprehenderit autem, ipsum perspiciatis inventore consequuntur voluptate quae nostrum? Eum nam quaerat placeat aperiam.</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td> <img src="pic2.png" alt="2" style="position: relative; width: 100%; margin-left: 30%; border: 1px black solid;"></td>
+                  </tr>
+                  <tr style="position: relative; width: 100%;">
+                    <td style="position: relative; width: 50%;">
+                      <table style="position: relative; width: 100%; height: 100%;">
+                        <tr style="position: relative; width: 100%; height: 100%;">
+                          <td class="gyanHeading">About us</td>
+                        </tr>
+                        <tr style="position: relative; width: 100%; height: 100%;">
+                          <td class="gyanDetail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque repudiandae voluptas quidem quo quisquam et maxime accusantium, nihil reprehenderit autem, ipsum perspiciatis inventore consequuntur voluptate quae nostrum? Eum nam quaerat placeat aperiam.</td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td> <img src="pic3.png" alt="3" style="position: relative; width: 100%; margin-left: 30%; border: 1px black solid;"></td>
+                </tr>
+                </table>
+            </div>
+        </div>
+        <script>
+            var map;
+            function initMap1() {
+              map = new mappls.Map("MappyMain", {
+                center: [28.61, 77.23],
+                zoomControl: true,
+                location: true,
+              });
+              map.addListener("load", function () {
+                var geoData = {
+                  type: "FeatureCollection",
+                  features: [
+                    {
+                      type: "Feature",
+                      properties: {
+                        htmlPopup: "J S Pigments Pvt Ltd",
+                      },
+                      geometry: {
+                        type: "Point",
+                        coordinates: [22.60870072067988, 88.39408861255038],
+                      },
+                    },
+                    {
+                      type: "Feature",
+                      properties: {
+                        htmlPopup: "OLD N FURNITURE",
+                      },
+                      geometry: {
+                        type: "Point",
+                        coordinates: [22.462695412878922, 88.17180902142299],
+                      },
+                    },
+                    {
+                      type: "Feature",
+                      properties: {
+                        htmlPopup: "K. J. RECYCLERS (E-WASTE RECYCLERS)",
+                      },
+                      geometry: {
+                        type: "Point",
+                        coordinates: [31.358680668829894, 75.5690247523502],
+                      },
+                    },
+                  ],
+                };
+                var marker = mappls.Marker({
+                  map: map,
+                  position: geoData,
+                  icon_url: "https://apis.mapmyindia.com/map_v3/1.png",
+                  fitbounds: true,
+                  clusters: false,
+                  fitboundOptions: {
+                    padding: 120,
+                    duration: 1000,
+                  },
+                  popupOptions: {
+                    offset: {
+                      bottom: [0, -20],
+                    },
+                  },
+                });
+              });
+            }
+          </script>
+    </body>
+</html>
